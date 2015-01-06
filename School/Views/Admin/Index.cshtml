@@ -1,0 +1,15 @@
+﻿@model School.Models.AdminViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.0.0.js"></script>
+<h2>Index</h2>
+
+@Html.ActionLink("Create user", "Register", "Account")
+
+@foreach (var item in Model.Users)
+{
+    @item.UserName @Html.CheckBox("IsStudent", item.IsStudent) @Html.CheckBox("IsTeacher", item.IsTeacher) @Html.CheckBox("IsAdmin", item.IsAdmin)
+}
